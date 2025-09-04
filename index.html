@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocco Marinelli - Head of Digital Content</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+       
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background: #f8f9fa;
+            padding: 20px;
+        }
+       
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+       
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #FF6900 0%, #E15D00 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+       
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M 8 0 L 0 0 0 8" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+       
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+       
+        .name {
+            font-size: 3em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+       
+        .title {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+       
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+       
+        .contact-item {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+       
+        /* Executive Summary */
+        .executive-summary {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+        }
+       
+        .executive-summary h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+       
+        .executive-summary p {
+            font-size: 1.1em;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+       
+        /* Main Content */
+        .main-content {
+            display: flex;
+            gap: 0;
+        }
+       
+        /* Sidebar */
+        .sidebar {
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-right: 1px solid #e9ecef;
+            flex: 1;
+            min-width: 300px;
+        }
+       
+        .sidebar-section {
+            margin-bottom: 35px;
+            break-inside: avoid;
+        }
+       
+        .sidebar-section h3 {
+            color: #FF6900;
+            font-size: 1.2em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+       
+        .skill-category {
+            margin-bottom: 20px;
+            break-inside: avoid;
+        }
+       
+        .skill-category h4 {
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+       
+        .skill-list {
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.6;
+        }
+       
+        .achievement-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border-left: 4px solid #FF6900;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            break-inside: avoid;
+        }
+       
+        .achievement-item h4 {
+            color: #FF6900;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+       
+        .achievement-item p {
+            font-size: 0.85em;
+            color: #666;
+            line-height: 1.5;
+        }
+       
+        /* Work Experience */
+        .work-experience {
+            padding: 40px;
+            flex: 2;
+        }
+       
+        .section-title {
+            color: #2d3748;
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+       
+        .job {
+            margin-bottom: 35px;
+            position: relative;
+            break-inside: avoid;
+        }
+       
+        .job::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background: #FF6900;
+            border-radius: 50%;
+        }
+       
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+       
+        .job-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+       
+        .company {
+            font-size: 1.1em;
+            color: #FF6900;
+            font-weight: 600;
+        }
+       
+        .duration {
+            font-size: 0.95em;
+            color: #666;
+            background: #f8f9fa;
+            padding: 4px 12px;
+            border-radius: 15px;
+        }
+       
+        .job-description {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+       
+        .achievements {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #FF6900;
+        }
+       
+        .achievements h4 {
+            color: #FF6900;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+       
+        .achievements ul {
+            list-style: none;
+            padding: 0;
+        }
+       
+        .achievements li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.9em;
+            color: #555;
+            line-height: 1.5;
+        }
+       
+        .achievements li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #FF6900;
+            font-weight: bold;
+        }
+       
+        /* Education */
+        .education {
+            background: #f8f9fa;
+            padding: 30px 40px;
+        }
+       
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+       
+        .education-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-left: 4px solid #FF6900;
+            break-inside: avoid;
+        }
+       
+        .education-item h4 {
+            color: #2d3748;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+       
+        .education-item p {
+            color: #666;
+            font-size: 0.9em;
+        }
+       
+        /* Editable styles */
+        .editable {
+            min-height: 1.2em;
+            padding: 2px;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+       
+        .editable:hover {
+            background-color: rgba(255, 105, 0, 0.1);
+            cursor: text;
+        }
+       
+        .editable:focus {
+            outline: 2px solid #FF6900;
+            background-color: rgba(255, 105, 0, 0.05);
+        }
+
+        /* Edit indicator */
+        .editable::after {
+            content: '✎';
+            position: absolute;
+            top: -2px;
+            right: -15px;
+            font-size: 12px;
+            color: #FF6900;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .editable:hover::after {
+            opacity: 0.7;
+        }
+       
+        /* Print styles - FIXED */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0.5in;
+            }
+           
+            body {
+                background: white;
+                padding: 0;
+                font-size: 12px;
+            }
+           
+            .cv-container {
+                box-shadow: none;
+                max-width: none;
+                width: 100%;
+            }
+           
+            .main-content {
+                display: block;
+            }
+           
+            .sidebar {
+                width: 100%;
+                float: left;
+                width: 35%;
+                padding: 20px 15px;
+                column-count: 1;
+            }
+           
+            .work-experience {
+                width: 65%;
+                float: right;
+                padding: 20px 15px;
+            }
+           
+            .header {
+                padding: 20px;
+            }
+           
+            .name {
+                font-size: 2.2em;
+            }
+           
+            .title {
+                font-size: 1.2em;
+            }
+           
+            .section-title {
+                font-size: 1.4em;
+                margin-bottom: 20px;
+            }
+           
+            .job-title {
+                font-size: 1.1em;
+            }
+           
+            .sidebar-section h3 {
+                font-size: 1em;
+            }
+           
+            .editable:hover,
+            .editable:focus {
+                background-color: transparent;
+                outline: none;
+            }
+           
+            .editable::after {
+                display: none;
+            }
+           
+            .job {
+                page-break-inside: avoid;
+                margin-bottom: 25px;
+            }
+           
+            .sidebar-section {
+                page-break-inside: avoid;
+                margin-bottom: 25px;
+            }
+           
+            .achievement-item {
+                page-break-inside: avoid;
+            }
+           
+            .education {
+                padding: 20px;
+            }
+           
+            .education-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+           
+            /* Ensure proper column layout for print */
+            .sidebar {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 35%;
+            }
+           
+            .work-experience {
+                margin-left: 37%;
+                width: 63%;
+            }
+        }
+       
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+           
+            .sidebar {
+                min-width: auto;
+            }
+           
+            .name {
+                font-size: 2.2em;
+            }
+           
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+
+        /* Additional mobile styles */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+           
+            .header {
+                padding: 20px;
+            }
+           
+            .sidebar, .work-experience {
+                padding: 20px;
+            }
+           
+            .education {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <h1 class="name editable" contenteditable="true">ROCCO MARINELLI</h1>
+                <p class="title editable" contenteditable="true">Digital Content Strategist | Head of Digital Content Candidate</p>
+                <div class="contact-info">
+                    <div class="contact-item">📧 <span class="editable" contenteditable="true">rocco.marineli@gmail.com</span></div>
+                    <div class="contact-item">📱 <span class="editable" contenteditable="true">0490038888</span></div>
+                    <div class="contact-item">🌏 <span class="editable" contenteditable="true">Australia (Flexible)</span></div>
+                </div>
+            </div>
+        </div>
+       
+        <!-- Executive Summary -->
+        <div class="executive-summary">
+            <h2 class="editable" contenteditable="true">EXECUTIVE SUMMARY</h2>
+            <p class="editable" contenteditable="true">I'm a digital content strategist with 15+ years building captivating content experiences for Australia's leading brands. I'm currently working in the Content Design Chapter at Telstra, having gained experience driving personalised content in the My Telstra App Get Help space and more recently in P2O optimising consideration to purchases.
+
+I have led creative teams and agencies of 20+ specialists, managing multi-million dollar content initiatives and delivering measurable ROI through data driven content strategies.
+
+I'm experienced in digital transformation leadership and creating customer experiences that resonate and drive business growth. More recently as an autodidact in the nascent AI space I'm eager to play a role in the post search engine driven landscape of AI agents.</p>
+        </div>
+       
+        <div class="main-content">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Core Competencies -->
+                <div class="sidebar-section">
+                    <h3 class="editable" contenteditable="true">CORE COMPETENCIES</h3>
+                   
+                    <div class="skill-category">
+                        <h4 class="editable" contenteditable="true">Agentic AI Exploration and Learning</h4>
+                        <div class="skill-list editable" contenteditable="true">AI implementation, automated workflow, personalisation engines, AI Command Line Interface programming</div>
+                    </div>
+                   
+                    <div class="skill-category">
+                        <h4 class="editable" contenteditable="true">Enterprise Leadership</h4>
+                        <div class="skill-list editable" contenteditable="true">Cross functional teams, digital transformation, change management, stakeholder alignment, agency management</div>
+                    </div>
+                   
+                    <div class="skill-category">
+                        <h4 class="editable" contenteditable="true">Technical Platforms</h4>
+                        <div class="skill-list editable" contenteditable="true">Adobe experience manager, content governance, analytics optimisation, CMS migrations</div>
+                    </div>
+                   
+                    <div class="skill-category">
+                        <h4 class="editable" contenteditable="true">Customer Experience</h4>
+                        <div class="skill-list editable" contenteditable="true">Mapping, behavioural targeting, accessibility compliance, user research</div>
+                    </div>
+                   
+                    <div class="skill-category">
+                        <h4 class="editable" contenteditable="true">Business Impact</h4>
+                        <div class="skill-list editable" contenteditable="true">Optimisation, customer acquisition, performance measurement, conversion optimisation</div>
+                    </div>
+                </div>
+               
+                <!-- Key Achievements -->
+                <div class="sidebar-section">
+                    <h3 class="editable" contenteditable="true">KEY ACHIEVEMENTS</h3>
+                   
+                    <div class="achievement-item">
+                        <h4 class="editable" contenteditable="true">Digital Transformation Leadership</h4>
+                        <p class="editable" contenteditable="true">Lead content workstream for $2 million plus digital transformation projects affecting 9M+ customers</p>
+                    </div>
+                   
+                    <div class="achievement-item">
+                        <h4 class="editable" contenteditable="true">Team and Budget Management</h4>
+                        <p class="editable" contenteditable="true">Successfully manage teams of 15+ specialist plus agencies and content staff with combined budget responsibility of 2M+ annually</p>
+                    </div>
+                   
+                    <div class="achievement-item">
+                        <h4 class="editable" contenteditable="true">Customer Experience Impact</h4>
+                        <p class="editable" contenteditable="true">Customer experience from a detractor-heavy baseline of -5 NPS to a positive score of +5 over 3 years, marking a critical turnaround in customer perception. This 10 point improvement was driven by a strategic content redesign that reduced customer support queries by 15% and increase self service</p>
+                    </div>
+                   
+                    <div class="achievement-item">
+                        <h4 class="editable" contenteditable="true">SEO and Performance</h4>
+                        <p class="editable" contenteditable="true">Achieved top five rankings for 50+ competitive keywords for multiple organisations, driving massive increase in organic traffic</p>
+                    </div>
+                   
+                    <div class="achievement-item">
+                        <h4 class="editable" contenteditable="true">Process Innovation</h4>
+                        <p class="editable" contenteditable="true">Implemented agile content methodologies reducing time to market by at least 25% across multiple organisations</p>
+                    </div>
+                </div>
+            </div>
+           
+            <!-- Work Experience -->
+            <div class="work-experience">
+                <h2 class="section-title editable" contenteditable="true">PROFESSIONAL EXPERIENCE</h2>
+               
+                <!-- Current Role -->
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title editable" contenteditable="true">CONTENT DESIGNER</div>
+                            <div class="company editable" contenteditable="true">Telstra</div>
+                        </div>
+                        <div class="duration editable" contenteditable="true">2022 - ongoing</div>
+                    </div>
+                    <div class="job-description editable" contenteditable="true">
+                        Content Design, Accessibility and Sigma strategy for Australia's largest telecommunications company, focusing on accessibility-first, customer centric content across multiple digital platforms serving 8.7M+ digitally active users.
+                    </div>
+                    <div class="achievements">
+                        <h4 class="editable" contenteditable="true">Key achievements and responsibilities:</h4>
+                        <ul>
+                            <li class="editable" contenteditable="true">Develop content journeys: create content journeys that align with Telstra's voice and meet the needs of app and web channels</li>
+                            <li class="editable" contenteditable="true">Write and edit for clarity: craft and refine content to ensure it is clear, engaging and accurate, enhancing the user experience and accessibility</li>
+                            <li class="editable" contenteditable="true">Ensure web accessibility: guarantee that all content meets web accessibility standards, making it usable for all customers</li>
+                            <li class="editable" contenteditable="true">Research and understand user needs: conduct user research to understand the target audience, ensuring content is tailored to their preference and behaviours</li>
+                            <li class="editable" contenteditable="true">Best practice and new technology adoption: member of key internal guild that evangelise web accessibility practices and adopting and shaping new applications such as Figma & Copilot</li>
+                        </ul>
+                    </div>
+                </div>
+               
+                <!-- CARS24 -->
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title editable" contenteditable="true">HEAD OF CONTENT</div>
+                            <div class="company editable" contenteditable="true">Cars24</div>
+                        </div>
+                        <div class="duration editable" contenteditable="true">2018</div>
+                    </div>
+                    <div class="job-description editable" contenteditable="true">
+                        Build a comprehensive content strategy from zero for Australian start-up disrupting the used car market through entirely digital buying experience. Lead content team and agencies in building brand awareness in competitive automotive sector.
+                    </div>
+                    <div class="achievements">
+                        <h4 class="editable" contenteditable="true">Key achievements:</h4>
+                        <ul>
+                            <li class="editable" contenteditable="true">Lead team of 20 agency specialist writers and content specialist, managing 500,000 an annual content budget</li>
+                            <li class="editable" contenteditable="true">Content hub from zero, achieving 15K plus monthly organic visitors within six months</li>
+                            <li class="editable" contenteditable="true">Content strategy, directly contributing to 20% increased in qualified leads</li>
+                            <li class="editable" contenteditable="true">Successfully gain top five rankings in crucial keyword search terms, organic traffic and social engagement</li>
+                            <li class="editable" contenteditable="true">Delivered content hub of lifestyle, brand and search optimise content with underlying governance model</li>
+                        </ul>
+                    </div>
+                </div>
+               
+                <!-- Techtronic -->
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title editable" contenteditable="true">CONTENT STRATEGY MANAGER</div>
+                            <div class="company editable" contenteditable="true">Techtronic Industries</div>
+                        </div>
+                        <div class="duration editable" contenteditable="true">2018 - 2021</div>
+                    </div>
+                    <div class="job-description editable" contenteditable="true">
+                        Lead content strategy for Australia's number one power tool brand Ryobi plus Hoover, AEG. Managed creative teams across multiple brands with competing timelines and priorities.
+                    </div>
+                    <div class="achievements">
+                        <h4 class="editable" contenteditable="true">Key achievements:</h4>
+                        <ul>
+                            <li class="editable" contenteditable="true">Managed team of 12+ designers, writers editors and produces across four major brands</li>
+                            <li class="editable" contenteditable="true">Delivered 250+ campaigns annually with 95% on time delivery rate</li>
+                            <li class="editable" contenteditable="true">Increased brand engagement by 35% through innovative content solutions</li>
+                            <li class="editable" contenteditable="true">Built highly cohesive teams within enthusiastic and productive culture</li>
+                            <li class="editable" contenteditable="true">Developed processes and workflow across multiple brands ensuring high standard work delivery</li>
+                            <li class="editable" contenteditable="true">Managed agency partner relationships optimise SEO, SEM and copywriting efforts</li>
+                        </ul>
+                    </div>
+                </div>
+               
+                <!-- iSelect -->
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title editable" contenteditable="true">CONTENT MARKETING & SOCIAL MEDIA MARKETING MANAGER</div>
+                            <div class="company editable" contenteditable="true">iSelect</div>
+                        </div>
+                        <div class="duration editable" contenteditable="true">2018</div>
+                    </div>
+                    <div class="job-description editable" contenteditable="true">
+                        Developed and executed comprehensive content marketing strategies for highly competitive comparison sectors including energy health and insurance.
+                    </div>
+                    <div class="achievements">
+                        <h4 class="editable" contenteditable="true">Key achievements:</h4>
+                        <ul>
+                            <li class="editable" contenteditable="true">Managed team of 8+ content specialist and SEO & SEM managers</li>
+                            <li class="editable" contenteditable="true">Increased conversion rate by 15% to 20% on key landing pages</li>
+                            <li class="editable" contenteditable="true">Developed content marketing strategy for three highly competitive sectors</li>
+                            <li class="editable" contenteditable="true">Delivered measurable SEO performance improvements across all content initiatives</li>
+                        </ul>
+                    </div>
+                </div>
+               
+                <!-- Transurban -->
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title editable" contenteditable="true">DIGITAL CONTENT LEAD</div>
+                            <div class="company editable" contenteditable="true">Transurban</div>
+                        </div>
+                        <div class="duration editable" contenteditable="true">2015 - 2018</div>
+                    </div>
+                    <div class="job-description editable" contenteditable="true">
+                        Lead end-to-end digital content production for major infrastructure companies digital transformation initiative. Served a digital product owner driving customer-centric design improvements.
+                    </div>
+                    <div class="achievements">
+                        <h4 class="editable" contenteditable="true">Key achievements:</h4>
+                        <ul>
+                            <li class="editable" contenteditable="true">Digital product owner for Transurban $1M+ digital transformation project</li>
+                            <li class="editable" contenteditable="true">Implemented site rewrite improving customer help section, increasing MPS by 10 points</li>
+                            <li class="editable" contenteditable="true">Lead A/B and multivariate testing of content and UX variations</li>
+                            <li class="editable" contenteditable="true">Delivered customer-centric product design improvements affecting 1 million users</li>
+                        </ul>
+                    </div>
+                </div>
+               
+                <!-- Consultancy -->
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title editable" contenteditable="true">CONTENT STRATEGIST</div>
+                            <div class="company editable" contenteditable="true">Consultant - Various Roles</div>
+                        </div>
+                        <div class="duration editable" contenteditable="true">2012 - 2015</div>
+                    </div>
+                    <div class="job-description editable" contenteditable="true">
+                        Consulted on large digital transformation projects for Australia's most recognisable brands, including Medibank RMIT city of Melbourne and Kangan Institute.
+                    </div>
+                    <div class="achievements">
+                        <h4 class="editable" contenteditable="true">Key achievements:</h4>
+                        <ul>
+                            <li class="editable" contenteditable="true">Lead content strategy for CMS migrations and rep platforming projects worth $2M+</li>
+                            <li class="editable" contenteditable="true">Delivered user journeys, content audits and taxonomy planning and keyword analysis</li>
+                            <li class="editable" contenteditable="true">Executed complete site, rewrite and content migration for enterprise clients</li>
+                            <li class="editable" contenteditable="true">Advocated for content strategy planning and successful digital transformation processes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sensis -->
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title editable" contenteditable="true">DIGITAL PRODUCER</div>
+                            <div class="company editable" contenteditable="true">Sensis (Telstra Subsidiary)</div>
+                        </div>
+                        <div class="duration editable" contenteditable="true">2007 - 2012</div>
+                    </div>
+                    <div class="job-description editable" contenteditable="true">
+                        Conduit between Business and Build Team. Oversaw builds, prioritise features, agile practitioner and evangelist, worked on WhereIs, Yellow Pages, White Pages and Citysearch.
+                    </div>
+                    <div class="achievements">
+                        <h4 class="editable" contenteditable="true">Key achievements:</h4>
+                        <ul>
+                            <li class="editable" contenteditable="true">SEO suburb and page indexing on WhereIs</li>
+                            <li class="editable" contenteditable="true">SEO Content Strategy</li>
+                            <li class="editable" contenteditable="true">Administration of Content Management Systems</li>
+                            <li class="editable" contenteditable="true">Analysis of key content metrics (Omniture)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <!-- Education -->
+        <div class="education">
+            <h2 class="section-title editable" contenteditable="true">EDUCATION & QUALIFICATIONS</h2>
+            <div class="education-grid">
+                <div class="education-item">
+                    <h4 class="editable" contenteditable="true">Bachelor of Business (Marketing Major)</h4>
+                    <p class="editable" contenteditable="true">Monash University, Australia</p>
+                </div>
+                <div class="education-item">
+                    <h4 class="editable" contenteditable="true">Bachelor of Communication (Journalism Major)</h4>
+                    <p class="editable" contenteditable="true">Monash University, Australia</p>
+                </div>
+                <div class="education-item">
+                    <h4 class="editable" contenteditable="true">Bachelor of Arts (Professional Writing)</h4>
+                    <p class="editable" contenteditable="true">Deakin University, Australia</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
