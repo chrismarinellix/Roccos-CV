@@ -4,6 +4,7 @@
 
 ### Primary Colors
 - **Orange Gradient**: `#FF6900` to `#E15D00` - Used for headers, accents, and key highlights
+- **Telstra Blue**: `#00b0eb` - Brand color for Telstra-related elements
 - **Dark Gray**: `#2d3748` to `#4a5568` - Executive summary background and headings
 - **White**: `#FFFFFF` - Primary background
 - **Light Gray**: `#f8f9fa` - Section backgrounds and subtle elements
